@@ -46,7 +46,8 @@ function get(key) {
         resolve(val);
       }
     })
-  })
+  });
+  return promise;
 }
 
 module.exports = {

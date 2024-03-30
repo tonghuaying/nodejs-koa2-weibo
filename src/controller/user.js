@@ -71,7 +71,7 @@ async function login(ctx, userName, password) {
 		return new ErrorModel(loginFailInfo);
 	}
 	// 登录成功
-	if (ctx.session.userInfo === null) {
+	if (ctx.session.userInfo == null) {
 		ctx.session.userInfo = userInfo;
 	}
 	return new SuccessModel();
