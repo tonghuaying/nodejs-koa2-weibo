@@ -19,6 +19,7 @@ function genValidator(validateFn) {
     if (error) {
       // 验证失败
       ctx.body = new ErrorModel(jsonSchemaFileInfo);
+      return;
     }
     // 验证成功，继续
     await next();
