@@ -25,14 +25,14 @@ async function loginCheck(ctx, next) {
  * @param {function} next
  */
 async function loginRedirect(ctx, next) {
-  if (ctx.session && ctx.session.userInfo) {
+	if (ctx.session && ctx.session.userInfo) {
 		// 已登录
 		await next();
 		return;
 	}
 	// 未登录
-  const curUrl = ctx.url;
-  ctx.redirect('./login?url=' + encodeURIComponent(curUrl));
+	const curUrl = ctx.url;
+	ctx.redirect("./login?url=" + encodeURIComponent(curUrl));
 }
 
 module.exports = {
