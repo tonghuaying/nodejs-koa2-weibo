@@ -8,7 +8,7 @@ const { uploadFileSizeFailInfo } = require("../model/ErrorInfo");
 const fse = require("fs-extra");
 
 // 存储目录
-const DIST_FOLDER_PATH = path.join(__dirname, "..", "..", "uploadFile");
+const DIST_FOLDER_PATH = path.join(__dirname, "..", "..", "uploadFiles");
 // 文件最大体积是 1M
 const MAX_SIZE = 1024 * 1024 * 1024;
 // 是否需要创建目录
