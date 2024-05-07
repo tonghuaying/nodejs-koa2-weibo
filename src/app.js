@@ -13,8 +13,10 @@ const koaStatic = require("koa-static");
 const { REDIS_CONF } = require("./conf/db");
 const { SESSION_SECRET_KEY } = require("./conf/secretKeys");
 const { isProd } = require("./utils/env");
+
 // 路由
-const blogViewRouter = require('./routes/view/blog');
+const blogHomeApiRouter = require("./routes/api/blog-home");
+const blogViewRouter = require("./routes/view/blog");
 // const index = require("./routes/index");
 const utilsAPIRouter = require("./routes/api/utils");
 // const users = require('./routes/users')
@@ -75,7 +77,7 @@ app.use(
 // })
 
 // routes
-
+app.use(blogHomeApiRouter.routes(), blogHomeApiRouter.allowedMethods());
 app.use(blogViewRouter.routes(), blogViewRouter.allowedMethods());
 app.use(utilsAPIRouter.routes(), utilsAPIRouter.allowedMethods());
 // app.use(users.routes(), users.allowedMethods())
