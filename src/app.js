@@ -14,7 +14,8 @@ const { REDIS_CONF } = require("./conf/db");
 const { SESSION_SECRET_KEY } = require("./conf/secretKeys");
 const { isProd } = require("./utils/env");
 // 路由
-const index = require("./routes/index");
+const blogViewRouter = require('./routes/view/blog');
+// const index = require("./routes/index");
 const utilsAPIRouter = require("./routes/api/utils");
 // const users = require('./routes/users')
 const userViewRouter = require("./routes/view/user");
@@ -74,7 +75,8 @@ app.use(
 // })
 
 // routes
-app.use(index.routes(), index.allowedMethods());
+
+app.use(blogViewRouter.routes(), blogViewRouter.allowedMethods());
 app.use(utilsAPIRouter.routes(), utilsAPIRouter.allowedMethods());
 // app.use(users.routes(), users.allowedMethods())
 app.use(userViewRouter.routes(), userViewRouter.allowedMethods());
