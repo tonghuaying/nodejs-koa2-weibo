@@ -18,6 +18,7 @@ const { isProd } = require("./utils/env");
 const blogHomeApiRouter = require("./routes/api/blog-home");
 const blogViewRouter = require("./routes/view/blog");
 const profileAPIRouter = require('./routes/api/blog-profile')
+const squareAPIRouter = require('./routes/api/blog-square')
 // const index = require("./routes/index");
 const utilsAPIRouter = require("./routes/api/utils");
 // const users = require('./routes/users')
@@ -81,6 +82,7 @@ app.use(
 app.use(blogHomeApiRouter.routes(), blogHomeApiRouter.allowedMethods());
 app.use(blogViewRouter.routes(), blogViewRouter.allowedMethods());
 app.use(profileAPIRouter.routes(), profileAPIRouter.allowedMethods())
+app.use(squareAPIRouter.routes(), squareAPIRouter.allowedMethods())
 app.use(utilsAPIRouter.routes(), utilsAPIRouter.allowedMethods());
 // app.use(users.routes(), users.allowedMethods())
 app.use(userViewRouter.routes(), userViewRouter.allowedMethods());
