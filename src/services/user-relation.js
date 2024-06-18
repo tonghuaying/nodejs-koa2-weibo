@@ -23,6 +23,7 @@
                  where: {
                      followerId,
                      userId: {
+                        // 不等于
                          [Sequelize.Op.ne]: followerId
                      }
                  }
